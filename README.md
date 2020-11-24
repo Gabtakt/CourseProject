@@ -42,3 +42,6 @@ windows系统下使用的flex+bison实现
 
 ## 操作系统课程设计
 完成了前四个任务，文件系统没做
+
+## 组成原理课程设计
+完成了全部个人任务，团队任务做的是井字棋游戏，答辩视频在这https://www.bilibili.com/video/BV1jV411U7ax/
