@@ -22,6 +22,7 @@ javafx界面开发，使用了java-version 13.02
 开发项目是一个简易的电影院信息管理系统
 ## 编译原理
 windows系统下使用的flex+bison实现
+
 实现的语义是C语言的子集，包括基本的数据类型和控制结构
 数据类型：int、float、char、double、array
 控制结构：if、if-else、while、for、break、continue
