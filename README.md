@@ -41,7 +41,9 @@ windows系统下使用的flex+bison实现
 控制结构：if、if-else、while、for、break、continue
 
 ## 操作系统课程设计
-完成了前四个任务，文件系统没做
+~~完成了前四个任务，文件系统没做~~
+
+*代码丢失就没上传，而且除了资源监视器外其他代码没什么参考价值*
 
 ## 组成原理课程设计
 完成了全部个人任务，团队任务做的是井字棋游戏，答辩视频在这https://www.bilibili.com/video/BV1jV411U7ax/
