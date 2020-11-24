@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.ManagerController">
+   <TabPane prefHeight="570.0" prefWidth="900.0" tabClosingPolicy="UNAVAILABLE" AnchorPane.bottomAnchor="0.0">
+     <tabs>
+       <Tab text="电影表">
+         <content>
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="307.0" prefWidth="511.0">
+                  <children>
+                      <Button layoutX="250.0" layoutY="488.0" mnemonicParsing="false" onAction="#onAddMovie" text="添加电影" />
+                      <Button layoutX="403.0" layoutY="488.0" mnemonicParsing="false" onAction="#onScreen" text="上映/下架电影" />
+                      <Button layoutX="584.0" layoutY="488.0" mnemonicParsing="false" onAction="#onDeleteMovie" text="删除电影" />
+                      <TableView fx:id="MOVIE_VIEW" maxWidth="-Infinity" minWidth="-Infinity" prefHeight="470.0" prefWidth="900.0" AnchorPane.bottomAnchor="69.60000000000002">
+                        <columns>
+                            <TableColumn fx:id="MOVIE_ID" prefWidth="225.0" text="电影ID" />
+                            <TableColumn fx:id="MOVIE_NAME" prefWidth="225.0" text="电影名" />
+                            <TableColumn fx:id="MOVIE_TIME" prefWidth="225.0" text="电影时长" />
+                            <TableColumn fx:id="SCREEN" prefWidth="224.0" text="是否上映" />
+                        </columns>
+                      </TableView>
+                  </children>
+               </AnchorPane>
+         </content>
+       </Tab>
+       <Tab text="影厅表">
+         <content>
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <TableView fx:id="MOVIEROOM_VIEW" layoutX="11.0" layoutY="7.0" prefHeight="282.0" prefWidth="308.0" AnchorPane.bottomAnchor="70.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                       <columns>
+                         <TableColumn fx:id="YTID" prefWidth="180.0" text="影厅号" />
+                         <TableColumn fx:id="YTMC" prefWidth="180.0" text="影厅名称" />
+                           <TableColumn fx:id="ZXHS" prefWidth="180.0" text="坐席行数" />
+                           <TableColumn fx:id="ZXLS" prefWidth="180.0" text="坐席列数" />
+                           <TableColumn fx:id="SFSY" prefWidth="170.0" text="是否使用" />
+                       </columns>
+                     </TableView>
+                     <Button layoutX="278.0" layoutY="485.0" mnemonicParsing="false" onAction="#onChooseAddMovieRoomButton" text="增添影厅" />
+                     <Button layoutX="403.0" layoutY="485.0" mnemonicParsing="false" onAction="#onChooseOpenMovieRoomButton" text="开启/关闭影厅" />
+                     <Button layoutX="558.0" layoutY="485.0" mnemonicParsing="false" onAction="#onChooseDeleteMovieRoomButton" text="删除影厅" />
+                  </children></AnchorPane>
+         </content>
+       </Tab>
+       <Tab text="档期信息表">
+         <content>
+           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                  <children>
+                     <TableView fx:id="SCHEDULE_VIEW" layoutX="6.0" layoutY="26.0" prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="180.0" AnchorPane.leftAnchor="6.0" AnchorPane.rightAnchor="-6.0" AnchorPane.topAnchor="26.0">
+                       <columns>
+                         <TableColumn fx:id="S_DQID" prefWidth="100.0" text="档期ID" />
+                         <TableColumn fx:id="S_YTID" prefWidth="100.0" text="影厅号" />
+                           <TableColumn fx:id="S_DYMC" prefWidth="100.0" text="电影名称" />
+                           <TableColumn fx:id="S_KSSJ" prefWidth="150.0" text="开始时间" />
+                           <TableColumn fx:id="S_JSSJ" prefWidth="150.0" text="结束时间" />
+                           <TableColumn fx:id="S_BFRQ" prefWidth="200.0" text="播放日期" />
+                           <TableColumn fx:id="S_EDPJ" prefWidth="100.0" text="额定票价" />
+                       </columns>
+                     </TableView>
+                     <DatePicker fx:id="SCHEDULE_DATE" layoutX="102.0" layoutY="4.0" AnchorPane.bottomAnchor="515.8" AnchorPane.topAnchor="4.0" />
+                     <Label layoutX="32.0" layoutY="7.0" text="选择日期：" />
+                     <Button fx:id="OK1Button" layoutX="304.0" layoutY="3.0" mnemonicParsing="false" onAction="#onChooseOK1Button" text="确认" />
+                     <Label layoutX="34.0" layoutY="412.0" text="影厅号:" AnchorPane.leftAnchor="34.0" />
+                     <ChoiceBox fx:id="ADD_YTID" layoutX="84.0" layoutY="408.0" maxWidth="-Infinity" minWidth="-Infinity" prefWidth="100.0" />
+                     <ChoiceBox fx:id="ADD_DYMC" layoutX="238.0" layoutY="408.0" prefWidth="100.0" />
+                     <ChoiceBox fx:id="ADD_HOUR" layoutX="86.0" layoutY="450.0" prefHeight="23.0" prefWidth="30.0" />
+                     <ChoiceBox fx:id="ADD_MIN" layoutX="140.0" layoutY="450.0" prefHeight="23.0" prefWidth="30.0" />
+                     <Label layoutX="124.0" layoutY="454.0" text="时" AnchorPane.leftAnchor="124.0" />
+                     <Label layoutX="180.0" layoutY="454.0" text="分" AnchorPane.leftAnchor="180.0" />
+                     <TextField fx:id="ADD_EDPJ" layoutX="238.0" layoutY="450.0" prefHeight="23.0" prefWidth="100.0" />
+                     <Label layoutX="166.0" layoutY="379.0" text="添加档期" />
+                     <Label layoutX="207.0" layoutY="412.0" text="电影:" AnchorPane.leftAnchor="207.0" />
+                     <Label layoutX="28.0" layoutY="454.0" text="开始时间:" AnchorPane.leftAnchor="28.0" />
+                     <Label layoutX="207.0" layoutY="454.0" text="票价:" />
+                     <Button fx:id="OK2Button" layoutX="170.0" layoutY="490.0" mnemonicParsing="false" onAction="#onChooseOK2Button" text="确认" AnchorPane.topAnchor="490.0" />
+                     <Line endX="-100.0" endY="114.0" layoutX="462.0" layoutY="425.0" startX="-100.00003051757812" startY="-65.0" />
+                     <Label layoutX="438.0" layoutY="379.0" text="删除档期" />
+                     <TextField fx:id="DEL_DQID" layoutX="424.0" layoutY="437.0" prefHeight="23.0" prefWidth="100.0" />
+                     <Label layoutX="378.0" layoutY="442.0" text="档期ID:" />
+                     <Button fx:id="OK3Button" layoutX="442.0" layoutY="490.0" mnemonicParsing="false" onAction="#onChooseOK3Button" text="确认" />
+                     <Line endX="-100.0" endY="114.0" layoutX="664.0" layoutY="425.0" startX="-100.00003051757812" startY="-65.0" />
+                     <Button fx:id="OK4Button" layoutX="728.0" layoutY="490.0" mnemonicParsing="false" onAction="#onChooseOK4Button" text="确认" />
+                     <Label layoutX="712.0" layoutY="379.0" text="复用档期安排" />
+                     <DatePicker fx:id="FYRQ" layoutX="673.0" layoutY="437.0" prefHeight="23.0" prefWidth="150.0" />
+                     <Label layoutX="600.0" layoutY="442.0" text="复用日期：" />
+                  </children></AnchorPane>
+         </content>
+       </Tab>
+     </tabs>
+   </TabPane>
+   <Label layoutX="405.0" layoutY="4.0" text="管理功能界面" textFill="#b71eb7" AnchorPane.bottomAnchor="575.0" AnchorPane.topAnchor="5.0">
+      <font>
+         <Font size="15.0" />
+      </font>
+   </Label>
+</AnchorPane>

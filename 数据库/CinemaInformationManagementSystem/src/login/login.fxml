@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="315.0"
+      prefWidth="568.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="login.LoginController">
+   <Label layoutX="155.0" layoutY="91.0" prefHeight="22.0" prefWidth="85.0" text="账户类型：">
+      <font>
+         <Font name="Microsoft YaHei" size="16.0"/>
+      </font>
+   </Label>
+   <Label layoutX="185.0" layoutY="154.0" prefHeight="22.0" prefWidth="55.0" text="账号：">
+      <font>
+         <Font name="Microsoft YaHei" size="16.0"/>
+      </font>
+   </Label>
+   <Label layoutX="185.0" layoutY="209.0" prefHeight="22.0" prefWidth="55.0" text="密码：">
+      <font>
+         <Font name="Microsoft YaHei" size="16.0"/>
+      </font>
+   </Label>
+   <TextField fx:id="account" layoutX="240.0" layoutY="154.0" promptText="请输入账号"/>
+   <PasswordField fx:id="pwd" layoutX="240.0" layoutY="209.0" promptText="请输入密码"/>
+   <Button layoutX="250.0" layoutY="255.0" mnemonicParsing="false" onAction="#onLogin" text="登录"/>
+   <Button layoutX="342.0" layoutY="255.0" mnemonicParsing="false" onAction="#onExit" text="退出"/>
+   <Label alignment="CENTER" layoutX="108.0" layoutY="26.0" prefHeight="45.0" prefWidth="365.0" text="登录系统"
+          textAlignment="CENTER" textFill="#aa2298">
+      <font>
+         <Font size="21.0"/>
+      </font>
+   </Label>
+   <ComboBox fx:id="userType" layoutX="240.0" layoutY="91.0" prefHeight="23.0" prefWidth="161.0" promptText="超级管理员"/>
+</Pane>

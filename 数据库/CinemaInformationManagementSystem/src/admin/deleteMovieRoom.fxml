@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="150.0" prefWidth="300.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="admin.DeleteMovieRoomController">
+    <children>
+        <Label layoutX="37.0" layoutY="34.0" text="影厅ID：" />
+        <TextField fx:id="YTID" layoutX="86.0" layoutY="30.0" />
+        <Button layoutX="89.0" layoutY="105.0" mnemonicParsing="false" onAction="#onChooseOKButton" text="确认" />
+        <Button layoutX="180.0" layoutY="105.0" mnemonicParsing="false" onAction="#onChooseCloseButton" text="返回" />
+    </children>
+</AnchorPane>
