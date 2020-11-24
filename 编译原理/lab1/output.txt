@@ -1,0 +1,516 @@
+(int, INT)
+(a, ID)
+(,, COMMA)
+(b, ID)
+(,, COMMA)
+(c, ID)
+(;, SEMI)
+(int, INT)
+(x, ID)
+(=, ASSIGNOP)
+(3, CONST_INT)
+(+, PLUS)
+(a, ID)
+(;, SEMI)
+(char, CHAR)
+(cChar, ID)
+(;, SEMI)
+(float, FLOAT)
+(m, ID)
+(,, COMMA)
+(n, ID)
+(;, SEMI)
+(double, DOUBLE)
+(cArray, ID)
+([, LB)
+(100, CONST_INT)
+(], RB)
+(;, SEMI)
+(int, INT)
+(b, ID)
+([, LB)
+(10, CONST_INT)
+(], RB)
+([, LB)
+(9, CONST_INT)
+(], RB)
+([, LB)
+(8, CONST_INT)
+(], RB)
+(;, SEMI)
+(int, INT)
+(d, ID)
+([, LB)
+(10, CONST_INT)
+(], RB)
+([, LB)
+(9, CONST_INT)
+(], RB)
+([, LB)
+(8, CONST_INT)
+(], RB)
+([, LB)
+(7, CONST_INT)
+(], RB)
+(;, SEMI)
+(struct, STRUCT)
+(A, ID)
+({, LC)
+(int, INT)
+(a, ID)
+(;, SEMI)
+(int, INT)
+(b, ID)
+(;, SEMI)
+(}, RC)
+(;, SEMI)
+(int, INT)
+(array, ID)
+([, LB)
+(10, CONST_INT)
+(], RB)
+(;, SEMI)
+(int, INT)
+(fibo, ID)
+((, LP)
+(int, INT)
+(a, ID)
+(), RP)
+({, LC)
+(struct, STRUCT)
+(A, ID)
+(tt, ID)
+(;, SEMI)
+(int, INT)
+(j, ID)
+(;, SEMI)
+(if, IF)
+((, LP)
+(a, ID)
+(==, RELOP)
+(1, CONST_INT)
+(||, OR)
+(a, ID)
+(==, RELOP)
+(2, CONST_INT)
+(), RP)
+(return, RETURN)
+(1, CONST_INT)
+(;, SEMI)
+(return, RETURN)
+(fibo, ID)
+((, LP)
+(a, ID)
+(-, MINUS)
+(1, CONST_INT)
+(), RP)
+(+, PLUS)
+(fibo, ID)
+((, LP)
+(a, ID)
+(-, MINUS)
+(2, CONST_INT)
+(), RP)
+(;, SEMI)
+(if, IF)
+((, LP)
+(a, ID)
+(>, RELOP)
+(10, CONST_INT)
+(), RP)
+(return, RETURN)
+(fibo, ID)
+((, LP)
+(a, ID)
+(-, MINUS)
+(1, CONST_INT)
+(,, COMMA)
+(a, ID)
+(-, MINUS)
+(2, CONST_INT)
+(), RP)
+(;, SEMI)
+(if, IF)
+((, LP)
+(b, ID)
+(>, RELOP)
+(100, CONST_INT)
+(), RP)
+(return, RETURN)
+(fibo, ID)
+((, LP)
+(a, ID)
+(-, MINUS)
+(1, CONST_INT)
+(), RP)
+(+, PLUS)
+(fibo, ID)
+((, LP)
+(a, ID)
+(-, MINUS)
+(2, CONST_INT)
+(), RP)
+(;, SEMI)
+(else, ELSE)
+({, LC)
+(b, ID)
+(--, MINUS_SELF)
+(;, SEMI)
+(}, RC)
+(for, FOR)
+((, LP)
+(j, ID)
+(=, ASSIGNOP)
+(0, CONST_INT)
+(;, SEMI)
+(j, ID)
+(<, RELOP)
+(100, CONST_INT)
+(;, SEMI)
+(j, ID)
+(++, PLUS_SELF)
+(), RP)
+({, LC)
+(g, ID)
+(=, ASSIGNOP)
+(cArray, ID)
+([, LB)
+(j, ID)
+(], RB)
+(;, SEMI)
+(}, RC)
+(}, RC)
+(void, VOID)
+(testf, ID)
+((, LP)
+(), RP)
+({, LC)
+(return, RETURN)
+(cArray, ID)
+([, LB)
+(0, CONST_INT)
+(], RB)
+(;, SEMI)
+(}, RC)
+(int, INT)
+(_tmain, ID)
+((, LP)
+(int, INT)
+(argc, ID)
+(), RP)
+({, LC)
+(int, INT)
+(m, ID)
+(=, ASSIGNOP)
+(10, CONST_INT)
+(,, COMMA)
+(n, ID)
+(,, COMMA)
+(i, ID)
+(;, SEMI)
+(m, ID)
+(=, ASSIGNOP)
+(read, ID)
+((, LP)
+(), RP)
+(;, SEMI)
+(cChar, ID)
+(=, ASSIGNOP)
+(a, CONST_CHAR)
+(;, SEMI)
+(cChar, ID)
+(=, ASSIGNOP)
+(\, CONST_CHAR)
+(;, SEMI)
+(cChar, ID)
+(=, ASSIGNOP)
+(
+, CONST_CHAR)
+(;, SEMI)
+(cChar, ID)
+(=, ASSIGNOP)
+(1, CONST_INT)
+(;, SEMI)
+(i, ID)
+(=, ASSIGNOP)
+(1, CONST_INT)
+(;, SEMI)
+(while, WHILE)
+((, LP)
+(i, ID)
+(<=, RELOP)
+(m, ID)
+(), RP)
+({, LC)
+(n, ID)
+(=, ASSIGNOP)
+(fibo, ID)
+((, LP)
+(i, ID)
+(), RP)
+(;, SEMI)
+(write, ID)
+((, LP)
+(n, ID)
+(), RP)
+(;, SEMI)
+(i, ID)
+(=, ASSIGNOP)
+(i, ID)
+(+, PLUS)
+(1, CONST_INT)
+(;, SEMI)
+(}, RC)
+(return, RETURN)
+(1, CONST_INT)
+(;, SEMI)
+(}, RC)
+ 外部变量定义：
+   类型： int
+   变量名：
+      ID： a
+      ID： b
+      ID： c
+ 外部变量定义及赋值：
+   类型： int
+   变量名：
+      ID： x
+      PLUS
+         INT：3
+         ID： a
+ 外部变量定义：
+   类型： char
+   变量名：
+      ID： cChar
+ 外部变量定义：
+   类型： float
+   变量名：
+      ID： m
+      ID： n
+ 外部变量定义：
+   类型： double
+   变量名：
+      数组：cArray
+         第1维大小：
+         INT：100
+         第2维大小：
+         INT：100
+ 外部变量定义：
+   类型： int
+   变量名：
+      数组：b
+         第1维大小：
+         INT：8
+         第2维大小：
+         INT：8
+ 外部变量定义：
+   类型： int
+   变量名：
+      数组：d
+         第1维大小：
+         INT：7
+         第2维大小：
+         INT：7
+ 结构体定义：
+   结构类型：A
+   结构体体：
+      局部变量定义：
+         类型： int
+         变量名：
+             a
+      局部变量定义：
+         类型： int
+         变量名：
+             b
+ 外部变量定义：
+   类型： int
+   变量名：
+      数组：array
+         第1维大小：
+         INT：10
+         第2维大小：
+         INT：10
+ 函数定义：
+   类型： int
+   函数名：fibo
+   函数形参：
+      类型：int, 参数名：a
+   复合语句：
+      复合语句的变量定义：
+         局部变量定义：
+            结构类型：A
+            变量名：
+                tt
+         局部变量定义：
+            类型： int
+            变量名：
+                j
+      复合语句的语句部分：
+         条件语句(IF_THEN)：
+            条件：
+               OR
+                  ==
+                     ID： a
+                     INT：1
+                  ==
+                     ID： a
+                     INT：2
+            IF子句：
+               返回语句：
+                  INT：1
+         返回语句：
+            PLUS
+               函数调用：
+                  函数名：fibo
+                  第1个实际参数表达式：
+                     MINUS
+                        ID： a
+                        INT：1
+               函数调用：
+                  函数名：fibo
+                  第1个实际参数表达式：
+                     MINUS
+                        ID： a
+                        INT：2
+         条件语句(IF_THEN)：
+            条件：
+               >
+                  ID： a
+                  INT：10
+            IF子句：
+               返回语句：
+                  函数调用：
+                     函数名：fibo
+                     第1个实际参数表达式：
+                        MINUS
+                           ID： a
+                           INT：1
+                     第2个实际参数表达式：
+                        MINUS
+                           ID： a
+                           INT：2
+         条件语句(IF_THEN_ELSE)：
+            条件：
+               >
+                  ID： b
+                  INT：100
+            IF子句：
+               返回语句：
+                  PLUS
+                     函数调用：
+                        函数名：fibo
+                        第1个实际参数表达式：
+                           MINUS
+                              ID： a
+                              INT：1
+                     函数调用：
+                        函数名：fibo
+                        第1个实际参数表达式：
+                           MINUS
+                              ID： a
+                              INT：2
+            ELSE子句：
+               复合语句：
+                  复合语句的变量定义：
+                  复合语句的语句部分：
+                     表达式语句：
+                        --
+                           ID： b
+         循环语句：
+            循环条件：
+                     =
+                        ID： j
+                        INT：0
+                     <
+                        ID： j
+                        INT：100
+                     ++
+                        ID： j
+            循环体：
+               复合语句：
+                  复合语句的变量定义：
+                  复合语句的语句部分：
+                     表达式语句：
+                        =
+                           ID： g
+                           数组元素：cArray[ j ]
+ 函数定义：
+   类型： void
+   函数名：testf
+      无参函数：
+   复合语句：
+      复合语句的变量定义：
+      复合语句的语句部分：
+         返回语句：
+            数组元素：cArray[  ]
+ 函数定义：
+   类型： int
+   函数名：_tmain
+   函数形参：
+      类型：int, 参数名：argc
+   复合语句：
+      复合语句的变量定义：
+         局部变量定义：
+            类型： int
+            变量名：
+                m 
+                  ASSIGNOP
+                  INT：10
+                n
+                i
+      复合语句的语句部分：
+         表达式语句：
+            =
+               ID： m
+               函数调用：
+                  函数名：read
+         表达式语句：
+            =
+               ID： cChar
+               CHAR：a
+         表达式语句：
+            =
+               ID： cChar
+               CHAR：\
+         表达式语句：
+            =
+               ID： cChar
+               CHAR：
+
+         表达式语句：
+            =
+               ID： cChar
+               INT：1
+         表达式语句：
+            =
+               ID： i
+               INT：1
+         循环语句：
+            循环条件：
+               <=
+                  ID： i
+                  ID： m
+            循环体：
+               复合语句：
+                  复合语句的变量定义：
+                  复合语句的语句部分：
+                     表达式语句：
+                        =
+                           ID： n
+                           函数调用：
+                              函数名：fibo
+                              第1个实际参数表达式：
+                                 ID： i
+                     表达式语句：
+                        函数调用：
+                           函数名：write
+                           第1个实际参数表达式：
+                              ID： n
+                     表达式语句：
+                        =
+                           ID： i
+                           PLUS
+                              ID： i
+                              INT：1
+         返回语句：
+            INT：1

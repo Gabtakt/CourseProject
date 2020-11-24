@@ -1,0 +1,80 @@
+//test commont
+//************
+//**/
+/*test commont*/
+/**/
+/***********/
+/****
+****/
+int fibo(int a)
+{
+	if(a==1 || a==2)
+		return 1;
+	return fibo(a-1)+fibo(a-2);
+}
+struct A
+{
+	int a;
+	float b;
+	double d;
+	char c;
+	string str;
+}structAA;
+
+int a,b,c;
+float m,n;
+double d;
+char ch;
+string str;
+
+int main()
+{
+	int m,n,i;
+	float b;
+	double d;
+	char c;
+	string str;
+	int array[5][5];
+	struct A stuctA;
+	c='c';
+	str="abcdef";
+	structA.a=1;
+	i=1;
+	b=1.0;
+	d=-1.0;
+	i=0xD;
+	i=0xd;
+	i=o0;
+	i=O0;
+	i+=1;
+	i-=1;
+	i*=1;
+	i/=1;
+	n=i-1;
+	n=i+1;
+	n=i*1;
+	n=i/1;
+	m=10;
+	while(i<=m)
+	{
+		n=fibo(i);
+		i=i+1;
+		continue;
+	}
+	for(i=0;i<10;i++)
+	{
+	    i+=1;
+		if(i == 8)
+		{
+			break;
+		}
+		else
+		{
+			n++;
+			++n;
+			m--;
+			--m;
+		}
+	}
+	return 0;	
+}

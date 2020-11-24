@@ -1,0 +1,127 @@
+
+进入复合语句块，当前符号表如下：
+变量名  别名    层号    类型    标记    偏移量  
+a       v1      0       int     V       0       
+b       v2      0       float   V       4       
+c       v3      0       float   V       8       
+f1      v4      0       int     F       0       
+x       v5      1       int     P       12      
+y       v6      1       int     P       16      
+
+进入复合语句块，当前符号表如下：
+变量名  别名    层号    类型    标记    偏移量  
+a       v1      0       int     V       0       
+b       v2      0       float   V       4       
+c       v3      0       float   V       8       
+f1      v4      0       int     F       0       
+x       v5      1       int     P       12      
+y       v6      1       int     P       16      
+a       v7      1       char    V       20      
+c       v8      1       double  V       21      
+
+在复合语句块，当前符号表如下：
+变量名  别名    层号    类型    标记    偏移量  
+a       v1      0       int     V       0       
+b       v2      0       float   V       4       
+c       v3      0       float   V       8       
+f1      v4      0       int     F       0       
+x       v5      1       int     P       12      
+y       v6      1       int     P       16      
+a       v7      1       char    V       20      
+c       v8      1       double  V       21      
+a       v9      2       float   V       29      
+
+退出复合语句块，当前符号表如下：
+变量名  别名    层号    类型    标记    偏移量  
+a       v1      0       int     V       0       
+b       v2      0       float   V       4       
+c       v3      0       float   V       8       
+f1      v4      0       int     F       0       
+x       v5      1       int     P       12      
+y       v6      1       int     P       16            
+a       v7      1       char    V       20      
+c       v8      1       double  V       21   
+
+进入复合语句块，当前符号表如下：
+变量名  别名    层号    类型    标记    偏移量  
+a       v1      0       int     V       0       
+b       v2      0       float   V       4       
+c       v3      0       float   V       8       
+f1      v4      0       int     F       0       
+x       v5      1       int     P       12      
+y       v6      1       int     P       16             
+a       v7      1       char    V       20      
+c       v8      1       double  V       21   
+
+在复合语句块，当前符号表如下：
+变量名  别名    层号    类型    标记    偏移量  
+a       v1      0       int     V       0       
+b       v2      0       float   V       4       
+c       v3      0       float   V       8       
+f1      v4      0       int     F       0       
+x       v5      1       int     P       12      
+y       v6      1       int     P       16            
+a       v7      1       char    V       20      
+c       v8      1       double  V       21    
+f       v10     2       int     V       29      
+
+退出复合语句块，当前符号表如下：
+变量名  别名    层号    类型    标记    偏移量  
+a       v1      0       int     V       0       
+b       v2      0       float   V       4       
+c       v3      0       float   V       8       
+f1      v4      0       int     F       0       
+x       v5      1       int     P       12      
+y       v6      1       int     P       16            
+a       v7      1       char    V       20      
+c       v8      1       double  V       21   
+
+在复合语句块，当前符号表如下：
+变量名  别名    层号    类型    标记    偏移量  
+a       v1      0       int     V       0       
+b       v2      0       float   V       4       
+c       v3      0       float   V       8       
+f1      v4      0       int     F       0       
+x       v5      1       int     P       12      
+y       v6      1       int     P       16      
+
+退出复合语句块，当前符号表如下：
+变量名  别名    层号    类型    标记    偏移量  
+a       v1      0       int     V       0       
+b       v2      0       float   V       4       
+c       v3      0       float   V       8       
+f1      v4      0       int     F       0       
+
+进入复合语句块，当前符号表如下：
+变量名  别名    层号    类型    标记    偏移量  
+a       v1      0       int     V       0       
+b       v2      0       float   V       4       
+c       v3      0       float   V       8       
+f1      v4      0       int     F       0       
+d       v11     0       char    V       12      
+main    v12     0       int     F       0       
+a       v13     1       int     P       12      
+b       v14     1       int     P       16      
+
+在复合语句块，当前符号表如下：
+变量名  别名    层号    类型    标记    偏移量  
+a       v1      0       int     V       0       
+b       v2      0       float   V       4       
+c       v3      0       float   V       8       
+f1      v4      0       int     F       0       
+d       v11     0       char    V       12      
+main    v12     0       int     F       0       
+a       v13     1       int     P       12      
+b       v14     1       int     P       16      
+
+退出复合语句块，当前符号表如下：
+变量名  别名    层号    类型    标记    偏移量  
+a       v1      0       int     V       0       
+b       v2      0       float   V       4       
+c       v3      0       float   V       8       
+f1      v4      0       int     F       0       
+d       v11     0       char    V       12      
+main    v12     0       int     F       0       
+
+静态语义错误信息：
+error: in line 14, 函数缺少返回值

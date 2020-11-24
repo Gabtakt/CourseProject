@@ -1,0 +1,535 @@
+  FUNCTION fibo :
+  PARAM v8
+    temp1 := #4
+    temp2 := #3 * #10
+    temp1 := temp1 + temp2
+    temp3 := #1
+    v1[temp1] := temp3
+    temp4 := #4
+    temp5 := #3 * #10
+    temp4 := temp4 + temp5
+    v8 := v1[temp4]
+    temp6 := #1
+    v8 := temp6
+LABEL label7 :
+    temp7 := #10
+    IF v8 < temp7 GOTO label5
+    GOTO label4
+LABEL label5 :
+    temp9 := #5
+    IF v8 < temp9 GOTO label9
+    GOTO label10
+LABEL label9 :
+    GOTO label8
+    GOTO label7
+LABEL label10 :
+    GOTO label4
+LABEL label8 :
+    temp8 := v8
+    v8 := v8 + #1
+    GOTO label7
+LABEL label4 :
+    v8 := v8 - #1
+    temp10 := v8
+    temp11 := #1
+    IF temp10 == temp11 GOTO label12
+    GOTO label13
+LABEL label13 :
+    temp12 := #2
+    IF v8 == temp12 GOTO label12
+    GOTO label11
+LABEL label12 :
+    temp13 := #1
+    RETURN temp13
+LABEL label11 :
+    temp14 := #1
+    temp15 := v8 - temp14
+    ARG temp15
+    temp16 := CALL fibo
+    temp17 := #2
+    temp18 := v8 - temp17
+    ARG temp18
+    temp19 := CALL fibo
+    temp20 := temp16 + temp19
+    RETURN temp20
+    temp21 := #10
+    IF v8 > temp21 GOTO label16
+    GOTO label15
+LABEL label16 :
+    temp22 := #100
+    IF v2 > temp22 GOTO label17
+    GOTO label18
+LABEL label17 :
+    temp23 := #1
+    temp24 := v8 - temp23
+    ARG temp24
+    temp25 := CALL fibo
+    temp26 := #2
+    temp27 := v8 - temp26
+    ARG temp27
+    temp28 := CALL fibo
+    temp29 := temp25 + temp28
+    RETURN temp29
+    GOTO label15
+LABEL label18 :
+    temp30 := v2
+    v2 := v2 - #1
+LABEL label15 :
+    temp31 := #1
+    v8 := temp31
+    temp32 := #2
+    v2 := temp32
+    temp33 := #0
+    RETURN temp33
+LABEL label1 :
+  FUNCTION testf :
+    temp34 := #97
+    RETURN temp34
+LABEL label21 :
+  FUNCTION main :
+  PARAM v11
+    temp35 := #10
+    v12 := temp35
+    temp36 := #1
+    v14 := temp36
+LABEL label26 :
+    temp37 := #1
+    temp38 := v14 + temp37
+    IF temp38 <= v12 GOTO label25
+    GOTO label24
+LABEL label25 :
+    ARG v14
+    temp39 := CALL fibo
+    v13 := temp39
+    temp40 := #1
+    temp41 := v14 + temp40
+    v14 := temp41
+    temp42 := #10
+    IF v14 > temp42 GOTO label29
+    GOTO label30
+LABEL label29 :
+    GOTO label24
+    GOTO label26
+LABEL label30 :
+    GOTO label26
+    GOTO label26
+LABEL label24 :
+    temp43 := #1
+    RETURN temp43
+LABEL label22 :
+未优化代码的基本块如下：
+------------------BLOCK1------------------
+  FUNCTION fibo :
+  PARAM v8
+    temp1 := #4
+    temp2 := #3 * #10
+    temp1 := temp1 + temp2
+    temp3 := #1
+    v1[temp1] := temp3
+    temp4 := #4
+    temp5 := #3 * #10
+    temp4 := temp4 + temp5
+    v8 := v1[temp4]
+    temp6 := #1
+    v8 := temp6
+------------------end------------------------
+
+------------------BLOCK2------------------
+LABEL label7 :
+    temp7 := #10
+    IF v8 < temp7 GOTO label5
+------------------end------------------------
+
+------------------BLOCK3------------------
+    GOTO label4
+------------------end------------------------
+
+------------------BLOCK4------------------
+LABEL label5 :
+    temp9 := #5
+    IF v8 < temp9 GOTO label9
+------------------end------------------------
+
+------------------BLOCK5------------------
+    GOTO label10
+------------------end------------------------
+
+------------------BLOCK6------------------
+LABEL label9 :
+    GOTO label8
+------------------end------------------------
+
+------------------BLOCK7------------------
+    GOTO label7
+------------------end------------------------
+
+------------------BLOCK8------------------
+LABEL label10 :
+    GOTO label4
+------------------end------------------------
+
+------------------BLOCK9------------------
+LABEL label8 :
+    temp8 := v8
+    v8 := v8 + #1
+    GOTO label7
+------------------end------------------------
+
+------------------BLOCK10------------------
+LABEL label4 :
+    v8 := v8 - #1
+    temp10 := v8
+    temp11 := #1
+    IF temp10 == temp11 GOTO label12
+------------------end------------------------
+
+------------------BLOCK11------------------
+    GOTO label13
+------------------end------------------------
+
+------------------BLOCK12------------------
+LABEL label13 :
+    temp12 := #2
+    IF v8 == temp12 GOTO label12
+------------------end------------------------
+
+------------------BLOCK13------------------
+    GOTO label11
+------------------end------------------------
+
+------------------BLOCK14------------------
+LABEL label12 :
+    temp13 := #1
+    RETURN temp13
+------------------end------------------------
+
+------------------BLOCK15------------------
+LABEL label11 :
+    temp14 := #1
+    temp15 := v8 - temp14
+    ARG temp15
+    temp16 := CALL fibo
+    temp17 := #2
+    temp18 := v8 - temp17
+    ARG temp18
+    temp19 := CALL fibo
+    temp20 := temp16 + temp19
+    RETURN temp20
+------------------end------------------------
+
+------------------BLOCK16------------------
+    temp21 := #10
+    IF v8 > temp21 GOTO label16
+------------------end------------------------
+
+------------------BLOCK17------------------
+    GOTO label15
+------------------end------------------------
+
+------------------BLOCK18------------------
+LABEL label16 :
+    temp22 := #100
+    IF v2 > temp22 GOTO label17
+------------------end------------------------
+
+------------------BLOCK19------------------
+    GOTO label18
+------------------end------------------------
+
+------------------BLOCK20------------------
+LABEL label17 :
+    temp23 := #1
+    temp24 := v8 - temp23
+    ARG temp24
+    temp25 := CALL fibo
+    temp26 := #2
+    temp27 := v8 - temp26
+    ARG temp27
+    temp28 := CALL fibo
+    temp29 := temp25 + temp28
+    RETURN temp29
+------------------end------------------------
+
+------------------BLOCK21------------------
+    GOTO label15
+------------------end------------------------
+
+------------------BLOCK22------------------
+LABEL label18 :
+    temp30 := v2
+    v2 := v2 - #1
+------------------end------------------------
+
+------------------BLOCK23------------------
+LABEL label15 :
+    temp31 := #1
+    v8 := temp31
+    temp32 := #2
+    v2 := temp32
+    temp33 := #0
+    RETURN temp33
+------------------end------------------------
+
+------------------BLOCK24------------------
+  FUNCTION testf :
+    temp34 := #97
+    RETURN temp34
+------------------end------------------------
+
+------------------BLOCK25------------------
+  FUNCTION main :
+  PARAM v11
+    temp35 := #10
+    v12 := temp35
+    temp36 := #1
+    v14 := temp36
+------------------end------------------------
+
+------------------BLOCK26------------------
+LABEL label26 :
+    temp37 := #1
+    temp38 := v14 + temp37
+    IF temp38 <= v12 GOTO label25
+------------------end------------------------
+
+------------------BLOCK27------------------
+    GOTO label24
+------------------end------------------------
+
+------------------BLOCK28------------------
+LABEL label25 :
+    ARG v14
+    temp39 := CALL fibo
+    v13 := temp39
+    temp40 := #1
+    temp41 := v14 + temp40
+    v14 := temp41
+    temp42 := #10
+    IF v14 > temp42 GOTO label29
+------------------end------------------------
+
+------------------BLOCK29------------------
+    GOTO label30
+------------------end------------------------
+
+------------------BLOCK30------------------
+LABEL label29 :
+    GOTO label24
+------------------end------------------------
+
+------------------BLOCK31------------------
+    GOTO label26
+------------------end------------------------
+
+------------------BLOCK32------------------
+LABEL label30 :
+    GOTO label26
+------------------end------------------------
+
+------------------BLOCK33------------------
+    GOTO label26
+------------------end------------------------
+
+------------------BLOCK34------------------
+LABEL label24 :
+    temp43 := #1
+    RETURN temp43
+------------------end------------------------
+
+
+流图的dfs遍历：
+BLOCK1----->BLOCK4
+BLOCK4----->BLOCK6
+BLOCK6----->BLOCK9
+BLOCK9----->BLOCK2
+BLOCK2----->BLOCK4
+BLOCK2----->BLOCK3
+BLOCK3----->BLOCK10
+BLOCK10----->BLOCK14
+BLOCK10----->BLOCK11
+BLOCK11----->BLOCK12
+BLOCK12----->BLOCK14
+BLOCK12----->BLOCK13
+BLOCK13----->BLOCK15
+BLOCK4----->BLOCK5
+BLOCK5----->BLOCK8
+BLOCK8----->BLOCK10
+BLOCK1----->BLOCK2
+BLOCK25----->BLOCK28
+BLOCK28----->BLOCK30
+BLOCK30----->BLOCK34
+BLOCK28----->BLOCK29
+BLOCK29----->BLOCK32
+BLOCK32----->BLOCK26
+BLOCK26----->BLOCK28
+BLOCK26----->BLOCK27
+BLOCK27----->BLOCK34
+BLOCK25----->BLOCK26
+
+优化后的代码的基本块如下：
+------------------BLOCK1------------------
+  FUNCTION fibo :
+  PARAM v8
+    temp1 := #4
+    temp2 := #3 * #10
+    temp1 := temp1 + temp2
+    temp3 := #1
+    v1[temp1] := temp3
+    temp4 := #4
+    temp5 := #3 * #10
+    temp4 := temp4 + temp5
+    v8 := v1[temp4]
+    temp6 := #1
+    v8 := temp6
+------------------end------------------------
+
+------------------BLOCK2------------------
+LABEL label7 :
+    temp7 := #10
+    IF v8 < temp7 GOTO label5
+------------------end------------------------
+
+------------------BLOCK3------------------
+    GOTO label4
+------------------end------------------------
+
+------------------BLOCK4------------------
+LABEL label5 :
+    temp9 := #5
+    IF v8 < temp9 GOTO label9
+------------------end------------------------
+
+------------------BLOCK5------------------
+    GOTO label10
+------------------end------------------------
+
+------------------BLOCK6------------------
+LABEL label9 :
+    GOTO label8
+------------------end------------------------
+
+------------------BLOCK8------------------
+LABEL label10 :
+    GOTO label4
+------------------end------------------------
+
+------------------BLOCK9------------------
+LABEL label8 :
+    temp8 := v8
+    v8 := v8 + #1
+    GOTO label7
+------------------end------------------------
+
+------------------BLOCK10------------------
+LABEL label4 :
+    v8 := v8 - #1
+    temp10 := v8
+    temp11 := #1
+    IF temp10 == temp11 GOTO label12
+------------------end------------------------
+
+------------------BLOCK11------------------
+    GOTO label13
+------------------end------------------------
+
+------------------BLOCK12------------------
+LABEL label13 :
+    temp12 := #2
+    IF v8 == temp12 GOTO label12
+------------------end------------------------
+
+------------------BLOCK13------------------
+    GOTO label11
+------------------end------------------------
+
+------------------BLOCK14------------------
+LABEL label12 :
+    temp13 := #1
+    RETURN temp13
+------------------end------------------------
+
+------------------BLOCK15------------------
+LABEL label11 :
+    temp14 := #1
+    temp15 := v8 - temp14
+    ARG temp15
+    temp16 := CALL fibo
+    temp17 := #2
+    temp18 := v8 - temp17
+    ARG temp18
+    temp19 := CALL fibo
+    temp20 := temp16 + temp19
+    RETURN temp20
+------------------end------------------------
+
+------------------BLOCK24------------------
+  FUNCTION testf :
+    temp34 := #97
+    RETURN temp34
+------------------end------------------------
+
+------------------BLOCK25------------------
+  FUNCTION main :
+  PARAM v11
+    temp35 := #10
+    v12 := temp35
+    temp36 := #1
+    v14 := temp36
+------------------end------------------------
+
+------------------BLOCK26------------------
+LABEL label26 :
+    temp37 := #1
+    temp38 := v14 + temp37
+    IF temp38 <= v12 GOTO label25
+------------------end------------------------
+
+------------------BLOCK27------------------
+    GOTO label24
+------------------end------------------------
+
+------------------BLOCK28------------------
+LABEL label25 :
+    ARG v14
+    temp39 := CALL fibo
+    v13 := temp39
+    temp40 := #1
+    temp41 := v14 + temp40
+    v14 := temp41
+    temp42 := #10
+    IF v14 > temp42 GOTO label29
+------------------end------------------------
+
+------------------BLOCK29------------------
+    GOTO label30
+------------------end------------------------
+
+------------------BLOCK30------------------
+LABEL label29 :
+    GOTO label24
+------------------end------------------------
+
+------------------BLOCK32------------------
+LABEL label30 :
+    GOTO label26
+------------------end------------------------
+
+------------------BLOCK34------------------
+LABEL label24 :
+    temp43 := #1
+    RETURN temp43
+------------------end------------------------
+
+
+优化信息：
+在基本块BLOCK7，基本块不可达，删除
+在基本块BLOCK16，基本块不可达，删除
+在基本块BLOCK17，基本块不可达，删除
+在基本块BLOCK18，基本块不可达，删除
+在基本块BLOCK19，基本块不可达，删除
+在基本块BLOCK20，基本块不可达，删除
+在基本块BLOCK21，基本块不可达，删除
+在基本块BLOCK22，基本块不可达，删除
+在基本块BLOCK23，基本块不可达，删除
+在基本块BLOCK31，基本块不可达，删除
+在基本块BLOCK33，基本块不可达，删除

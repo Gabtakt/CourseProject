@@ -1,0 +1,28 @@
+G[program]:
+  program → ExtDefList
+  ExtDefList→ExtDef  ExtDefList | ε
+  ExtDef→Specifier  ExtDecList ; |Specifier  FunDec  CompSt
+  ExtDecList→VarDec | VarDec , ExtDecList
+  Specifier→int | float | char | string | StructSpecifier {}
+  StructSpecifier→struct StructName (DefList) | struct ID
+  StructName→ ID | ε
+  VarDec→ID | VarDec[Exp]
+  FucDec→ID ( VarList )  | ID ( )	
+  VarList→ParamDec , VarList   |   ParamDec
+  ParamDec→Specifier VarDec			
+  CompSt→{ DefList  StmList }
+  StmList→Stmt  StmList | ε
+  Stmt→Exp ;  |  CompSt  | return Exp ; | if ( Exp ) Stmt   | if ( Exp ) Stmt else Stmt   | while ( Exp ) Stmt | for(ForDec); | break; | continue;
+  ForDec→Exp;Exp;Exp | ;Exp;
+  DefList→Def DefList | ε
+  Def→Specifier DecList ;
+  DecList→Dec  | Dec , DecList
+  Dec→VarDec  |  VarDec = Exp
+  Exp →Exp =Exp  |
+            Exp&& Exp |  Exp || Exp | Exp < Exp | Exp <= Exp | Exp == Exp | Exp != Exp | Exp > Exp | Exp >= Exp
+            Exp++ | ++Exp | Exp-- | --Exp
+            | Exp + Exp | Exp += Exp | Exp - Exp | Exp -= Exp
+            | Exp * Exp | Exp *= Exp | Exp / Exp | Exp /= Exp
+            | ( Exp ) | - Exp  |  ! Exp  | ID ( Args )  | ID ( ) | Exp[Exp] | Exp.ID
+            | ID | int | float | char | string
+  Args→Exp , Args  | Exp
